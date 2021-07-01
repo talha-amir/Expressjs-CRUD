@@ -26,7 +26,8 @@ var customers = {
 }
 
 exports.create = function (req, res) {
-    var newCustomer = req.body;
+
+    var newCustomer = req.query;
     customers["customer" + newCustomer.id] = newCustomer;
     console.log("--->After Post, customers:\n" + JSON.stringify(customers, null, 4));
     res.end("Post Successfully: \n" + JSON.stringify(newCustomer, null, 4));
