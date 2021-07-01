@@ -10,3 +10,6 @@ The project create a set of Rest-APIs for POST/GET/UPDATE/DELETE APIs:
     
 - /api/customers/delete/:id – DELETE a customer by Id (params = [id])
     
+Deployed Version :https://maple-bunnyhug-10430.herokuapp.com/ 
+
+Git : https://git.heroku.com/maple-bunnyhug-10430.git    
