@@ -1,7 +1,14 @@
 module.exports = function (app) {
 
+    function home(req, res) {
+
+        req.send("Welcome to CRUD APP!");
+
+    }
+
     var customers = require('../controllers/customer.controller.js');
 
+    app.get('/', home)
     // Create a new Customer
     app.post('/customers', customers.create);
 
