@@ -2,7 +2,7 @@ module.exports = function (app) {
 
     function home(req, res) {
 
-        req.send("Welcome to CRUD APP!");
+        res.send("https://github.com/talha-amir/Expressjs-CRUD");
 
     }
 
