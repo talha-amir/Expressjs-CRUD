@@ -1,14 +1,14 @@
 The project create a set of Rest-APIs for POST/GET/UPDATE/DELETE APIs:
 
-- /api/customers – GET all customers (params = [])
+- /customers – GET all customers (params = [])
     
-- /api/customers/:id – GET a customer by Id (params = [id])
+- /customers/:id – GET a customer by Id (params = [id])
     
-- /api/customers – POST a customer ( params = [firstname,lastname,age])
+- /customers – POST a customer ( params = [firstname,lastname,age])
     params = [firstname,lastname,age]
-- /api/customers/update/:id – UPDATE a customer by Id (params = [id,firstname,lastname,age])
+- /customers/update/:id – UPDATE a customer by Id (params = [id,firstname,lastname,age])
     
-- /api/customers/delete/:id – DELETE a customer by Id (params = [id])
+- /customers/delete/:id – DELETE a customer by Id (params = [id])
     
 
-Deployed at : https://polar-island-70285.herokuapp.com/
+Deployed at : https://glacial-depths-05494.herokuapp.com/
