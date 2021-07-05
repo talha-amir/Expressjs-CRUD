@@ -18,6 +18,7 @@ var customers = {
         id: 3
     },
     customer4: {
+
         firstname: "Peter",
         lastname: "Thomas",
         age: 17,
@@ -25,33 +26,39 @@ var customers = {
     }
 }
 
-exports.create = function (req, res) {
+const path = require('path');
+
+exports.home = function(req, res) {
+    res.sendFile(path.join(__dirname + '/check.html'));
+}
+
+exports.create = function(req, res) {
 
     var newCustomer = req.query;
     customers["customer" + newCustomer.id] = newCustomer;
-    console.log("--->After Post, customers:\n" + JSON.stringify(customers, null, 4));
+    // console.log("--->After Post, customers:\n" + JSON.stringify(customers, null, 4));
     res.end("Post Successfully: \n" + JSON.stringify(newCustomer, null, 4));
 };
 
-exports.findAll = function (req, res) {
-    console.log("--->Find All: \n" + JSON.stringify(customers, null, 4));
+exports.findAll = function(req, res) {
+    // console.log("--->Find All: \n" + JSON.stringify(customers, null, 4));
     res.end("All Customers: \n" + JSON.stringify(customers, null, 4));
 };
 
-exports.findOne = function (req, res) {
+exports.findOne = function(req, res) {
     var customer = customers["customer" + req.params.id];
-    console.log("--->Find customer: \n" + JSON.stringify(customer, null, 4));
+    // console.log("--->Find customer: \n" + JSON.stringify(customer, null, 4));
     res.end("Find a Customer:\n" + JSON.stringify(customer, null, 4));
 };
 
-exports.update = function (req, res) {
+exports.update = function(req, res) {
     var id = parseInt(req.params.id);
     var updatedCustomer = req.body;
     if (customers["customer" + id] != null) {
         // update data
         customers["customer" + id] = updatedCustomer;
 
-        console.log("--->Update Successfully, customers: \n" + JSON.stringify(customers, null, 4))
+        // console.log("--->Update Successfully, customers: \n" + JSON.stringify(customers, null, 4))
 
         // return
         res.end("Update Successfully! \n" + JSON.stringify(updatedCustomer, null, 4));
@@ -60,9 +67,9 @@ exports.update = function (req, res) {
     }
 };
 
-exports.delete = function (req, res) {
+exports.delete = function(req, res) {
     var deleteCustomer = customers["customer" + req.params.id];
     delete customers["customer" + req.params.id];
-    console.log("--->After deletion, customer list:\n" + JSON.stringify(customers, null, 4));
+    // console.log("--->After deletion, customer list:\n" + JSON.stringify(customers, null, 4));
     res.end("Deleted customer: \n" + JSON.stringify(deleteCustomer, null, 4));
 };
