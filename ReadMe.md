@@ -11,4 +11,4 @@ The project create a set of Rest-APIs for POST/GET/UPDATE/DELETE APIs:
 - /customers/delete/:id – DELETE a customer by Id (params = [id])
     
 
-Deployed at : https://glacial-depths-05494.herokuapp.com/
+Deployed at : https://express-crud-example00.herokuapp.com/

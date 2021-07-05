@@ -1,15 +1,9 @@
-module.exports = function(app) {
-
-    // function home(req, res) {
-
-    //     res.send("https://github.com/talha-amir/Expressjs-CRUD");
-
-    // }
+module.exports = function (app) {
 
     var customers = require('../controllers/customer.controller.js');
-
+    // Display API URLS
     app.get('/', customers.home)
-        // Create a new Customer
+    // Create a new Customer
     app.post('/customers', customers.create);
 
     // Retrieve all Customer
